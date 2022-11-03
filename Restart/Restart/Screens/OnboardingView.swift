@@ -15,6 +15,9 @@ struct OnboardingView: View {
   @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
   @State private var buttonOffset: CGFloat = 0.0
   @State private var isAnimating: Bool = false
+  @State private var imageOffset: CGSize = .zero
+  @State private var indicatorOpacity: Double = 1.0
+  @State private var textTitle: String = "Share."
   
   // MARK: - Body
   
@@ -28,10 +31,12 @@ struct OnboardingView: View {
         Spacer()
         // * Tip: brace 뒤에 커서를 두고, option + commend + <- 화살표를 누르면 해당 블럭 코드를 감출 수 있다. ({...}), -> 누르면 다시 펴짐
         VStack(spacing: 0) {
-          Text("Share.")
+          Text(textTitle)
             .font(.system(size: 60))
             .fontWeight(.heavy)
             .foregroundColor(.white)
+            .transition(.opacity) // text transition animation setting
+            .id(textTitle) // * id를 통해 지정된 값이 변경되면 해당 뷰가 변경되었으므로, 업데이트가 필요함을 알릴 수 있다. -> id를 지정하니, textTitle 변경에 따라 opacity animation이 동작한다.
           
           Text("""
           It's not how much we give but
@@ -50,14 +55,55 @@ struct OnboardingView: View {
         // MARK: - Center
         
         ZStack {
+          // Horizontal Parallax Effect (수평 평행 효과 적용)
           CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+            .offset(x: imageOffset.width * -1) // 아재 x좌표 이동방향 반대로 링이 이동
+            .blur(radius: abs(imageOffset.width / 5)) // 드래그 이동한 것의 0.2배 정도로 blur radius 처리
+            .animation(.easeOut(duration: 1), value: imageOffset)
 
+          // * rotationEffect : angle, anchor parameter를 설정할 수 있다. (아래에서는 angle만 설정, anchor는 미설정 시, .center로 설정됨)
           Image("character-1")
             .resizable()
             .scaledToFit()
             .opacity(isAnimating ? 1 : 0) // 아재가 서서히 보여짐
             .animation(.easeOut(duration: 0.5), value: isAnimating)
+            .offset(x: imageOffset.width * 1.2, y: 0) // drag offset 1.2배 정도의 움직임
+            .rotationEffect(.degrees(Double(imageOffset.width / 20)))
+            .gesture(
+              DragGesture()
+                .onChanged { gesture in
+                  if abs(imageOffset.width) <= 150 {
+                    imageOffset = gesture.translation
+                    // 제스쳐를 할때에는 인디케이터가 사라짐
+                    withAnimation(.linear(duration: 0.25)) {
+                      indicatorOpacity = 0.0
+                      textTitle = "Give." // text transition
+                    }
+                  }
+                }
+                .onEnded { _ in
+                  imageOffset = .zero
+                  
+                  withAnimation(.linear(duration: 0.25)) {
+                    // 제스쳐를 마칠때, 안할때는 인디케이터가 보여짐
+                    indicatorOpacity = 1.0
+                    textTitle = "Share." // text transition
+                  }
+                }
+              //: Gesture
+            )
+            .animation(.easeOut(duration: 1), value: imageOffset)
         } //: Center
+        .overlay( // Center View에 대한 overlay View 적용
+          Image(systemName: "arrow.left.and.right.circle")
+            .font(.system(size: 44, weight: .ultraLight))
+            .foregroundColor(.white)
+            .offset(y: 20)
+            .opacity(isAnimating ? 1 : 0)
+            .animation(.easeOut(duration: 1).delay(2), value: isAnimating)
+            .opacity(indicatorOpacity)
+          , alignment: .bottom
+        )
         
         Spacer()
         
