@@ -52,21 +52,38 @@ struct HomeView: View {
       
       Spacer()
       
-      Button(action: {
-        withAnimation {
-          isOnboardingViewActive = true
-        }
-      }) {
-        // * HStack을 감싸지 않아도, Button Label 내에 두개 이상의 View가 들어가면 알아서 HStack처럼 레이아웃을 배치해준다.
-        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-          .imageScale(.large)
-        Text("Restart")
-          .font(.system(.title3, design: .rounded))
-          .fontWeight(.bold)
-      } //: Button
-      .buttonStyle(.borderedProminent) // border를 강조하는 버튼 스타일
-      .buttonBorderShape(.capsule) // 버튼 테두리를 Capsule 형태로 디자인
-      .controlSize(.large)
+      if #available(iOS 15.0, *) {
+        Button(action: {
+          withAnimation {
+            play(sound: "success", type: "m4a") // playing sound
+            isOnboardingViewActive = true
+          }
+        }) {
+          // * HStack을 감싸지 않아도, Button Label 내에 두개 이상의 View가 들어가면 알아서 HStack처럼 레이아웃을 배치해준다.
+          Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+            .imageScale(.large)
+          Text("Restart")
+            .font(.system(.title3, design: .rounded))
+            .fontWeight(.bold)
+        } //: Button
+        .buttonStyle(.borderedProminent) // border를 강조하는 버튼 스타일, (borderedProminent type이 iOS 15+)
+        .buttonBorderShape(.capsule) // 버튼 테두리를 Capsule 형태로 디자인 (iOS 15+)
+        .controlSize(.large) // (iOS 15+)
+      } else {
+        Button(action: {
+          withAnimation {
+            play(sound: "success", type: "m4a") // playing sound
+            isOnboardingViewActive = true
+          }
+        }) {
+          // * HStack을 감싸지 않아도, Button Label 내에 두개 이상의 View가 들어가면 알아서 HStack처럼 레이아웃을 배치해준다.
+          Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+            .imageScale(.large)
+          Text("Restart")
+            .font(.system(.title3, design: .rounded))
+            .fontWeight(.bold)
+        } //: Button
+      }
     } //: VStack
     .onAppear {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {

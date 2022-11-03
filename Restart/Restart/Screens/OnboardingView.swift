@@ -19,6 +19,9 @@ struct OnboardingView: View {
   @State private var indicatorOpacity: Double = 1.0
   @State private var textTitle: String = "Share."
   
+  // haptic feedback은 실기기에서만 테스트 가능하다.
+  let hapticFeedback = UINotificationFeedbackGenerator()
+  
   // MARK: - Body
   
   var body: some View {
@@ -170,9 +173,12 @@ struct OnboardingView: View {
                     // 1) 드래깅이 화면 중앙 기준, 우측으로 갔다가 놓여지면, HomeView 이동
                     // 2) 드래깅이 화면 중앙 기준, 좌측으로 갔다가 놓여지면, 화면 유지
                     if buttonOffset > buttonWidth / 2 {
+                      hapticFeedback.notificationOccurred(.success)
+                      play(sound: "chimeup", type: "mp3") // playing sound
                       buttonOffset = buttonWidth - 80
                       isOnboardingViewActive = false
                     } else {
+                      hapticFeedback.notificationOccurred(.warning)
                       // 초기 좌측위치에 버튼이 배치되도록 설정
                       buttonOffset = 0
                     }
@@ -193,6 +199,7 @@ struct OnboardingView: View {
     .onAppear {
       isAnimating = true
     }
+    .preferredColorScheme(.dark) // dark모드로 고정
   }
 }
 
