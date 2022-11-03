@@ -13,6 +13,7 @@ struct CircleGroupView: View {
   
   @State var ShapeColor: Color
   @State var ShapeOpacity: Double
+  @State private var isAnimating: Bool = false
   
   // MARK: - Body
   var body: some View {
@@ -25,6 +26,13 @@ struct CircleGroupView: View {
         .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
         .frame(width: 260, height: 260, alignment: .center)
     } //: ZStack
+    .blur(radius: isAnimating ? 0 : 10) // blur 효과가 서서히 없어 짐
+    .opacity(isAnimating ? 1 : 0) // 서서히 보여짐
+    .scaleEffect(isAnimating ? 1 : 0.5) // 0.5배 -> 1.0배 크기로 커짐
+    .animation(.easeOut(duration: 1), value: isAnimating) // easeOut : 서서히 가속도 감소하는 animation
+    .onAppear {
+      isAnimating = true
+    }
   }
 }
 

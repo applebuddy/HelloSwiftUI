@@ -14,6 +14,7 @@ struct OnboardingView: View {
   
   @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
   @State private var buttonOffset: CGFloat = 0.0
+  @State private var isAnimating: Bool = false
   
   // MARK: - Body
   
@@ -42,6 +43,9 @@ struct OnboardingView: View {
           .multilineTextAlignment(.center)
           .padding(.horizontal, 10)
         } //: Header
+        .opacity(isAnimating ? 1 : 0) // 서서히 보여짐
+        .offset(y: isAnimating ? 0 : -40) // 서서히 내려옴
+        .animation(.easeOut(duration: 1), value: isAnimating) // easeOut animation 적용
         
         // MARK: - Center
         
@@ -51,6 +55,8 @@ struct OnboardingView: View {
           Image("character-1")
             .resizable()
             .scaledToFit()
+            .opacity(isAnimating ? 1 : 0) // 아재가 서서히 보여짐
+            .animation(.easeOut(duration: 0.5), value: isAnimating)
         } //: Center
         
         Spacer()
@@ -113,14 +119,17 @@ struct OnboardingView: View {
                   }
                 }
                 .onEnded { _ in
-                  // 1) 드래깅이 화면 중앙 기준, 우측으로 갔다가 놓여지면, HomeView 이동
-                  // 2) 드래깅이 화면 중앙 기준, 좌측으로 갔다가 놓여지면, 화면 유지
-                  if buttonOffset > buttonWidth / 2 {
-                    buttonOffset = buttonWidth - 80
-                    isOnboardingViewActive = false
-                  } else {
-                    // 초기 좌측위치에 버튼이 배치되도록 설정
-                    buttonOffset = 0
+                  withAnimation(Animation.easeOut(duration: 0.4)) {
+                    // * 아래 buttonOffset 설정으로 인한 변화에 대해 animation 적용
+                    // 1) 드래깅이 화면 중앙 기준, 우측으로 갔다가 놓여지면, HomeView 이동
+                    // 2) 드래깅이 화면 중앙 기준, 좌측으로 갔다가 놓여지면, 화면 유지
+                    if buttonOffset > buttonWidth / 2 {
+                      buttonOffset = buttonWidth - 80
+                      isOnboardingViewActive = false
+                    } else {
+                      // 초기 좌측위치에 버튼이 배치되도록 설정
+                      buttonOffset = 0
+                    }
                   }
                 }
             ) //: Gesture
@@ -130,10 +139,18 @@ struct OnboardingView: View {
         } //: Footer
         .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
+        .opacity(isAnimating ? 1 : 0)
+        .offset(y: isAnimating ? 0 : 40) // 40 -> 0 으로 footer가 올라옴
+        .animation(.easeOut(duration: 1.0), value: isAnimating)
       } //: VStack
     } //: ZStack
+    .onAppear {
+      isAnimating = true
+    }
   }
 }
+
+// MARK: - Preview
 
 struct OnboardingView_Previews: PreviewProvider {
   static var previews: some View {

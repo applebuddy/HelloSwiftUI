@@ -11,6 +11,7 @@ struct HomeView: View {
   // MARK: - Property
   
   @AppStorage("onboarding") var isOnboardingViewActive: Bool = false
+  @State private var isAnimating: Bool = false
   
   // MARK: - Body
   
@@ -27,6 +28,14 @@ struct HomeView: View {
         Image("character-2")
           .resizable()
           .scaledToFit()
+          .padding()
+          .offset(y: isAnimating ? 35 : -35) // 위아래로 왔다 갔다
+          .animation(
+            Animation
+              .easeInOut(duration: 4)
+              .repeatForever() // repeats animation
+            , value: isAnimating
+          )
         .padding()
       }
       
@@ -44,7 +53,9 @@ struct HomeView: View {
       Spacer()
       
       Button(action: {
-        isOnboardingViewActive = true
+        withAnimation {
+          isOnboardingViewActive = true
+        }
       }) {
         // * HStack을 감싸지 않아도, Button Label 내에 두개 이상의 View가 들어가면 알아서 HStack처럼 레이아웃을 배치해준다.
         Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
@@ -57,6 +68,11 @@ struct HomeView: View {
       .buttonBorderShape(.capsule) // 버튼 테두리를 Capsule 형태로 디자인
       .controlSize(.large)
     } //: VStack
+    .onAppear {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        isAnimating = true
+      })
+    }
   }
 }
 
