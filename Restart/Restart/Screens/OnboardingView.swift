@@ -12,6 +12,9 @@ struct OnboardingView: View {
   // * 만약 프로그램이 onboarding key의 값을 찾게 되면, true setting은 무시되고, 실제 찾은 값으로 설정 된다.
   @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
   
+  @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+  @State private var buttonOffset: CGFloat = 0.0
+  
   // MARK: - Body
   
   var body: some View {
@@ -77,9 +80,10 @@ struct OnboardingView: View {
           // drag 버튼 뒷 배경
 
           HStack {
+            // 드래깅을 하면, 드래깅 offset 만큼, 뒷 배경색이 ColorRed로 채워짐.
             Capsule()
               .fill(Color("ColorRed"))
-              .frame(width: 80)
+              .frame(width: buttonOffset + 80)
             
             Spacer()
           }
@@ -99,16 +103,32 @@ struct OnboardingView: View {
             }
             .foregroundColor(.white)
             .frame(width: 80, height: 80, alignment: .center)
-            .onTapGesture {
-              // drag 버튼을 탭 하면, isOnboardingViewActive = false로 셋팅
-              // -> View 재 랜더링, HomeView로 이동 됨.
-              isOnboardingViewActive = false
-            }
+            .offset(x: buttonOffset) // offset x 변화에 따라 화살표 버튼이 좌우로 이동함
+            .gesture(
+              DragGesture()
+                .onChanged { gesture in
+                  // 드래그가 가능하되, 일정 범위 내에서만 드래깅이 되도록 설정
+                  if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
+                    buttonOffset = gesture.translation.width
+                  }
+                }
+                .onEnded { _ in
+                  // 1) 드래깅이 화면 중앙 기준, 우측으로 갔다가 놓여지면, HomeView 이동
+                  // 2) 드래깅이 화면 중앙 기준, 좌측으로 갔다가 놓여지면, 화면 유지
+                  if buttonOffset > buttonWidth / 2 {
+                    buttonOffset = buttonWidth - 80
+                    isOnboardingViewActive = false
+                  } else {
+                    // 초기 좌측위치에 버튼이 배치되도록 설정
+                    buttonOffset = 0
+                  }
+                }
+            ) //: Gesture
             
             Spacer()
           } //: HStack
         } //: Footer
-        .frame(height: 80, alignment: .center)
+        .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
       } //: VStack
     } //: ZStack
