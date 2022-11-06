@@ -6,6 +6,7 @@
 //
 // MARK: 29. 2. SwiftUI Double Tap Gesture
 // MARK: 31. 4. SwiftUI Long Press Gesture
+// MARK: 32. 5. SwiftUI Control Interface (Scale Down, Scale Up, Reset)
 
 import SwiftUI
 
@@ -88,6 +89,53 @@ struct ContentView: View {
           .padding(.horizontal)
           .padding(.top, 30)
         , alignment: .top
+      )
+      // MARK: -  Controls
+      .overlay(
+        Group {
+          HStack {
+            // Scale Down
+            Button {
+              withAnimation(.spring()) {
+                // 이미지 크기를 점진적으로 1씩 감속 시키는 액션
+                if imageScale > 1 {
+                  imageScale -= 1
+                  if imageScale <= 1 {
+                    resetImageState()
+                  }
+                }
+              }
+            } label: {
+              ControlImageView(icon: "minus.magnifyingglass")
+            }
+            // Reset
+            Button {
+              resetImageState()
+            } label: {
+              ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+            }
+            // Scale Up
+            Button {
+              withAnimation(.spring()) {
+                // 이미지 크기를 점진적으로 1씩 감속 시키는 액션
+                if imageScale < 5 {
+                  imageScale += 1
+                  if imageScale > 5 {
+                    resetImageState()
+                  }
+                }
+              }
+            } label: {
+              ControlImageView(icon: "plus.magnifyingglass")
+            }
+          } //: Controls
+          .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+          .background(.ultraThinMaterial)
+          .cornerRadius(12)
+          .opacity(isAnimating ? 1 : 0)
+        }
+          .padding(.bottom, 30),
+        alignment: .bottom
       )
     } //: NavigationView
     .navigationViewStyle(.stack)
