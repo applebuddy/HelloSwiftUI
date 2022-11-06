@@ -8,6 +8,7 @@
 // MARK: 31. 4. SwiftUI Long Press Gesture
 // MARK: 32. 5. SwiftUI Control Interface (Scale Down, Scale Up, Reset)
 // MARK: 33. 6. SwiftUI Magnification Gesture
+// MARK: 34. 7. Drawer User Interface
 
 import SwiftUI
 
@@ -17,6 +18,7 @@ struct ContentView: View {
   @State private var isAnimating: Bool = false
   @State private var imageScale: CGFloat = 1
   @State private var imageOffset: CGSize = .zero
+  @State private var isDrawerOpen: Bool = false
   
   // MARK: - Function
   
@@ -158,6 +160,35 @@ struct ContentView: View {
         }
           .padding(.bottom, 30),
         alignment: .bottom
+      )
+      // MARK: - Drawer
+      .overlay(
+        HStack(spacing: 12) {
+          // MARK: - Drawer Handle, drawer 손잡이
+          Image(systemName: isDrawerOpen ? "chevron.compact.right" : "chevron.compact.left")
+            .resizable()
+            .scaledToFit()
+            .frame(height: 40)
+            .padding(8)
+            .foregroundStyle(.secondary)
+            .onTapGesture(perform: {
+              withAnimation(.easeOut) {
+                // drawer 이미지 클릭마다 여닫힘 액션 발생 with animation
+                isDrawerOpen.toggle()
+              }
+            })
+
+          // MARK: - Thumbnails
+          Spacer()
+        } //: Drawer
+          .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+          .background(.ultraThinMaterial)
+          .cornerRadius(12)
+          .opacity(isAnimating ? 1 : 0)
+          .frame(width:  260)
+          .padding(.top, UIScreen.main.bounds.height / 12)
+          .offset(x: isDrawerOpen ? 20 : 215)
+        , alignment: .topTrailing
       )
     } //: NavigationView
     .navigationViewStyle(.stack)
