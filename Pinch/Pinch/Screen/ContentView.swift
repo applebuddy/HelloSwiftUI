@@ -7,6 +7,7 @@
 // MARK: 29. 2. SwiftUI Double Tap Gesture
 // MARK: 31. 4. SwiftUI Long Press Gesture
 // MARK: 32. 5. SwiftUI Control Interface (Scale Down, Scale Up, Reset)
+// MARK: 33. 6. SwiftUI Magnification Gesture
 
 import SwiftUI
 
@@ -72,6 +73,27 @@ struct ContentView: View {
                   withAnimation(.spring()) {
                     resetImageState()
                   }
+                }
+              }
+          )
+        // MARK: - 3. Magnification
+          .gesture(
+            MagnificationGesture()
+            // pinch로 확대, 축소를 할때 View의 크기에 대한 상세 조절
+              .onChanged { value in
+                withAnimation(.linear(duration: 1)) {
+                  if imageScale >= 1 && imageScale <= 5 {
+                    imageScale = value
+                  } else if imageScale > 5 {
+                    imageScale = 5
+                  }
+                }
+              }
+              .onEnded { _ in
+                if imageScale > 5 {
+                  imageScale = 5
+                } else if imageScale <= 1 {
+                  resetImageState()
                 }
               }
           )
