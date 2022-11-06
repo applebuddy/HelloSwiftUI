@@ -5,6 +5,7 @@
 //  Created by MinKyeongTae on 2022/11/06.
 //
 // MARK: 29. 2. SwiftUI Double Tap Gesture
+// MARK: 31. 4. SwiftUI Long Press Gesture
 
 import SwiftUI
 
@@ -29,6 +30,8 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       ZStack {
+        Color.clear
+
         // MARK: - Page Image
         Image("magazine-front-cover")
           .resizable()
@@ -79,6 +82,13 @@ struct ContentView: View {
           isAnimating = true
         }
       }
+      // MARK: - Info Panel
+      .overlay(
+        InfoPanelView(scale: imageScale, offset: imageOffset)
+          .padding(.horizontal)
+          .padding(.top, 30)
+        , alignment: .top
+      )
     } //: NavigationView
     .navigationViewStyle(.stack)
   }
