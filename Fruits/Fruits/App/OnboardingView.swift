@@ -10,12 +10,14 @@ import SwiftUI
 struct OnboardingView: View {
   // MARK: - Properties
   
+  var fruits: [Fruit] = fruitsData
+  
   // MARK: - Body
 
   var body: some View {
     TabView {
-      ForEach(0..<5) { item in
-        FruitCardView()
+      ForEach(fruits[0...5]) { item in
+        FruitCardView(fruit: item)
       } //: Loop
     } //: Tab
     .tabViewStyle(PageTabViewStyle()) // PageTabViewStyle을 사용하여 페이지뷰를 쉽게 구현할 수 있다. (iOS 14+)
@@ -27,6 +29,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
   static var previews: some View {
-    OnboardingView()
+    OnboardingView(fruits: fruitsData)
   }
 }
