@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+  // MARK: - Properties
+  
+  var fruits: [Fruit] = fruitsData
+
+  // MARK: - Body
+
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(fruits.shuffled()) { item in
+          FruitRowView(fruit: item)
+            .padding(.vertical, 4)
+        }
+      }
+      .navigationTitle("Fruits")
+    } //: NavigationView
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView(fruits: fruitsData)
+  }
 }
