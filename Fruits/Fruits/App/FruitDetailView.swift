@@ -58,6 +58,9 @@ struct FruitDetailView: View {
       } //: Scroll
       .edgesIgnoringSafeArea(.top)
     } //: Navigation
+    // iPad는 iPhone과 sheetView, navigationView의 기본 표출 방식이 다르기 때문에 이를 고려하며 개발을 해야 한다.
+    // StackNavigationViewStyle을 적용하면, iPad에서도 한 화면에 하나의 View가 가득차 보이게 할 수 있다. (적용 안하면 좌측 사이드 뷰로 보이게 됨)
+    .navigationViewStyle(StackNavigationViewStyle())
   }
 }
 

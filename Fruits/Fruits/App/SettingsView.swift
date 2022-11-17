@@ -11,6 +11,7 @@ struct SettingsView: View {
   // MARK: - Properties
   
   @Environment(\.presentationMode) var presentationMode
+  @AppStorage("isOnboarding") var isOnboarding = false
   
   // MARK: - Body
 
@@ -37,6 +38,34 @@ struct SettingsView: View {
           }
           
           // MARK: - Section 2
+          
+          GroupBox(
+            label: SettingsLabelView(labelText: "Customization", labelImage: "painbrush")
+          ) {
+            Divider().padding(.vertical,  4)
+            Text("If you wish, you can restart the application by  toggle the  switch ini this box. That way it  starts the onboarding process and you will see the welcome screen again.")
+              .padding(.vertical, 8)
+              .frame(minHeight: 60)
+              .layoutPriority(1) // layoutPriority로 우선순위를 설정하면 컨텐츠에 대한 truncation 발생 View를 지정할 수 있다.
+              .multilineTextAlignment(.leading)
+            
+            Toggle(isOn: $isOnboarding) {
+              if isOnboarding {
+                Text("Restarted".uppercased())
+                  .fontWeight(.bold)
+                  .foregroundColor(.green)
+              } else {
+                Text("Restart".uppercased())
+                  .fontWeight(.bold)
+                  .foregroundColor(.secondary)
+              }
+            }
+            .padding()
+            .background(
+              Color(UIColor.tertiarySystemBackground)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            )
+          }
           
           // MARK: - Section 3
           
