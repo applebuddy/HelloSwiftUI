@@ -23,6 +23,7 @@
 		076E3D41291FBEC600E60375 /* FruitNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E3D40291FBEC600E60375 /* FruitNutrientsView.swift */; };
 		0791D8BD29240BD300F35236 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0791D8BC29240BD300F35236 /* SettingsView.swift */; };
 		07D0649A29255935008C2AAA /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0649929255935008C2AAA /* SettingsLabelView.swift */; };
+		07D0649C2926928A008C2AAA /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D0649B2926928A008C2AAA /* SettingsRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		076E3D40291FBEC600E60375 /* FruitNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitNutrientsView.swift; sourceTree = "<group>"; };
 		0791D8BC29240BD300F35236 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		07D0649929255935008C2AAA /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		07D0649B2926928A008C2AAA /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRowView.swift; path = Fruits/App/SettingsRowView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				076E3D3C291FAA1B00E60375 /* FruitHeaderView.swift */,
 				076E3D3E291FB9F100E60375 /* SourceLinkView.swift */,
 				07D0649929255935008C2AAA /* SettingsLabelView.swift */,
+				07D0649B2926928A008C2AAA /* SettingsRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				073295D5291EB0340047F55D /* FruitData.swift in Sources */,
 				076E3D3F291FB9F100E60375 /* SourceLinkView.swift in Sources */,
+				07D0649C2926928A008C2AAA /* SettingsRowView.swift in Sources */,
 				073295CB291EA2CC0047F55D /* FruitCardView.swift in Sources */,
 				076E3D39291FA19200E60375 /* FruitRowView.swift in Sources */,
 				076E3D41291FBEC600E60375 /* FruitNutrientsView.swift in Sources */,
