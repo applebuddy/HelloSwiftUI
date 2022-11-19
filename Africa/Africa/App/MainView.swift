@@ -5,6 +5,8 @@
 //  Created by MinKyeongTae on 2022/11/19.
 //
 
+// * Bundle : iOS, macOS에서 앱, 프레임워크, 플러그인, 실행가능한 코드, 관련 자원들(이미지, 사운드, 비디오 드응)을 사용하기 위해 Bundle을 사용한다.
+
 import SwiftUI
 
 struct MainView: View {
