@@ -8,8 +8,37 @@
 import SwiftUI
 
 struct VideoListView: View {
+  //  MARK: - Properties
+  
+  @State var videos: [Video] = Bundle.main.decode("videos.json")
+  
+  let hapticImpact = UIImpactFeedbackGenerator(style: .medium)
+  
+  //  MARK: - Body
+
   var body: some View {
-    Text("Videos")
+    NavigationView {
+      List {
+        ForEach(videos) { item in
+          VideoListItemView(video: item)
+            .padding(.vertical, 8)
+        } //: Loop
+      } //: List
+      .listStyle(InsetGroupedListStyle()) // InsetGroupedListStyle : iOS14+
+      .navigationBarTitle("Videos", displayMode: .inline)
+      .toolbar { // toolbar : iOS14+
+        ToolbarItem(placement: .navigationBarTrailing) { // ToolbarItem : iOS14+
+          Button {
+            // Shuffle videos
+            videos.shuffle()
+            // Getting haptic feedback (only available in real device, not simulator)
+            hapticImpact.impactOccurred()
+          } label: {
+            Image(systemName: "arrow.2.squarepath")
+          }
+        }
+      }
+    } //: Navigation
   }
 }
 
