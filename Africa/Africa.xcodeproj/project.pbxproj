@@ -19,6 +19,11 @@
 		070432C629350D0900034FC6 /* lioness.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 070432BC29350D0900034FC6 /* lioness.mp4 */; };
 		070432C729350D0900034FC6 /* lion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 070432BD29350D0900034FC6 /* lion.mp4 */; };
 		070432C829350D0900034FC6 /* rhino.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 070432BE29350D0900034FC6 /* rhino.mp4 */; };
+		070432CA29350FD600034FC6 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070432C929350FD600034FC6 /* LocationModel.swift */; };
+		070432EA2935131900034FC6 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 070432E62935131900034FC6 /* locations.json */; };
+		070432EB2935131900034FC6 /* covers.json in Resources */ = {isa = PBXBuildFile; fileRef = 070432E72935131900034FC6 /* covers.json */; };
+		070432EC2935131900034FC6 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 070432E82935131900034FC6 /* animals.json */; };
+		070432ED2935131900034FC6 /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = 070432E92935131900034FC6 /* videos.json */; };
 		070E6999292FD9E70013CB68 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E6998292FD9E70013CB68 /* VideoModel.swift */; };
 		070E699B292FDA3A0013CB68 /* VideoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E699A292FDA3A0013CB68 /* VideoListItemView.swift */; };
 		074D434B292A4CDE00167582 /* InsetMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D434A292A4CDE00167582 /* InsetMapView.swift */; };
@@ -27,10 +32,6 @@
 		076D8AF22928C2F10077E81F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D8AF12928C2F10077E81F /* ContentView.swift */; };
 		076D8AF42928C2F30077E81F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076D8AF32928C2F30077E81F /* Assets.xcassets */; };
 		076D8AF72928C2F30077E81F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076D8AF62928C2F30077E81F /* Preview Assets.xcassets */; };
-		076D8B112928C5E70077E81F /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 076D8B0D2928C5E70077E81F /* animals.json */; };
-		076D8B122928C5E70077E81F /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 076D8B0E2928C5E70077E81F /* locations.json */; };
-		076D8B132928C5E70077E81F /* covers.json in Resources */ = {isa = PBXBuildFile; fileRef = 076D8B0F2928C5E70077E81F /* covers.json */; };
-		076D8B142928C5E70077E81F /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = 076D8B102928C5E70077E81F /* videos.json */; };
 		076D8B182928C7DD0077E81F /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D8B172928C7DD0077E81F /* VideoListView.swift */; };
 		076D8B1A2928C7EE0077E81F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D8B192928C7EE0077E81F /* MapView.swift */; };
 		076D8B1C2928C7FE0077E81F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D8B1B2928C7FE0077E81F /* GalleryView.swift */; };
@@ -59,6 +60,11 @@
 		070432BC29350D0900034FC6 /* lioness.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lioness.mp4; sourceTree = "<group>"; };
 		070432BD29350D0900034FC6 /* lion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lion.mp4; sourceTree = "<group>"; };
 		070432BE29350D0900034FC6 /* rhino.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rhino.mp4; sourceTree = "<group>"; };
+		070432C929350FD600034FC6 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		070432E62935131900034FC6 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		070432E72935131900034FC6 /* covers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = covers.json; sourceTree = "<group>"; };
+		070432E82935131900034FC6 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
+		070432E92935131900034FC6 /* videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
 		070E6998292FD9E70013CB68 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		070E699A292FDA3A0013CB68 /* VideoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItemView.swift; sourceTree = "<group>"; };
 		074D434A292A4CDE00167582 /* InsetMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetMapView.swift; sourceTree = "<group>"; };
@@ -68,10 +74,6 @@
 		076D8AF12928C2F10077E81F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 1; };
 		076D8AF32928C2F30077E81F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076D8AF62928C2F30077E81F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		076D8B0D2928C5E70077E81F /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = animals.json; path = "../../../../../Downloads/SWIFTUI-APP-AFRICA-UPDATED/Resources/data/animals.json"; sourceTree = "<group>"; };
-		076D8B0E2928C5E70077E81F /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = "../../../../../Downloads/SWIFTUI-APP-AFRICA-UPDATED/Resources/data/locations.json"; sourceTree = "<group>"; };
-		076D8B0F2928C5E70077E81F /* covers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = covers.json; path = "../../../../../Downloads/SWIFTUI-APP-AFRICA-UPDATED/Resources/data/covers.json"; sourceTree = "<group>"; };
-		076D8B102928C5E70077E81F /* videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = videos.json; path = "../../../../../Downloads/SWIFTUI-APP-AFRICA-UPDATED/Resources/data/videos.json"; sourceTree = "<group>"; };
 		076D8B152928C6D60077E81F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		076D8B172928C7DD0077E81F /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		076D8B192928C7EE0077E81F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,17 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		070432E52935131900034FC6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				070432E62935131900034FC6 /* locations.json */,
+				070432E72935131900034FC6 /* covers.json */,
+				070432E82935131900034FC6 /* animals.json */,
+				070432E92935131900034FC6 /* videos.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		076D8AE32928C2F00077E81F = {
 			isa = PBXGroup;
 			children = (
@@ -143,13 +156,13 @@
 		076D8AEE2928C2F10077E81F /* Africa */ = {
 			isa = PBXGroup;
 			children = (
+				070432E52935131900034FC6 /* Data */,
 				070432AF2935079200034FC6 /* Helper */,
 				076D8B252928E62C0077E81F /* Extension */,
 				076D8B1F2928E2920077E81F /* View */,
 				076D8B222928E4450077E81F /* Model */,
 				076D8B152928C6D60077E81F /* Info.plist */,
 				070432B429350D0900034FC6 /* Video */,
-				076D8B0C2928C5C80077E81F /* Data */,
 				076D8B162928C7A50077E81F /* App */,
 				076D8AF32928C2F30077E81F /* Assets.xcassets */,
 				076D8AF52928C2F30077E81F /* Preview Content */,
@@ -163,17 +176,6 @@
 				076D8AF62928C2F30077E81F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		076D8B0C2928C5C80077E81F /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				076D8B0D2928C5E70077E81F /* animals.json */,
-				076D8B0F2928C5E70077E81F /* covers.json */,
-				076D8B0E2928C5E70077E81F /* locations.json */,
-				076D8B102928C5E70077E81F /* videos.json */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		076D8B162928C7A50077E81F /* App */ = {
@@ -212,6 +214,7 @@
 				076D8B232928E4550077E81F /* CoverImageModel.swift */,
 				07859B4D292A312700D91420 /* AnimalModel.swift */,
 				070E6998292FD9E70013CB68 /* VideoModel.swift */,
+				070432C929350FD600034FC6 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,20 +285,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070432EC2935131900034FC6 /* animals.json in Resources */,
+				070432EA2935131900034FC6 /* locations.json in Resources */,
 				070432C229350D0900034FC6 /* hippo.mp4 in Resources */,
-				076D8B132928C5E70077E81F /* covers.json in Resources */,
-				076D8B112928C5E70077E81F /* animals.json in Resources */,
 				076D8AF72928C2F30077E81F /* Preview Assets.xcassets in Resources */,
 				070432C429350D0900034FC6 /* gorilla.mp4 in Resources */,
 				070432C629350D0900034FC6 /* lioness.mp4 in Resources */,
 				070432C529350D0900034FC6 /* elephant.mp4 in Resources */,
-				076D8B122928C5E70077E81F /* locations.json in Resources */,
 				070432C829350D0900034FC6 /* rhino.mp4 in Resources */,
+				070432EB2935131900034FC6 /* covers.json in Resources */,
 				076D8AF42928C2F30077E81F /* Assets.xcassets in Resources */,
 				070432BF29350D0900034FC6 /* giraffe.mp4 in Resources */,
 				070432C029350D0900034FC6 /* ostrich.mp4 in Resources */,
 				070432C129350D0900034FC6 /* zebra.mp4 in Resources */,
-				076D8B142928C5E70077E81F /* videos.json in Resources */,
+				070432ED2935131900034FC6 /* videos.json in Resources */,
 				070432C729350D0900034FC6 /* lion.mp4 in Resources */,
 				070432C329350D0900034FC6 /* cheetah.mp4 in Resources */,
 			);
@@ -324,6 +327,7 @@
 				076D8B182928C7DD0077E81F /* VideoListView.swift in Sources */,
 				070E6999292FD9E70013CB68 /* VideoModel.swift in Sources */,
 				076D8B1C2928C7FE0077E81F /* GalleryView.swift in Sources */,
+				070432CA29350FD600034FC6 /* LocationModel.swift in Sources */,
 				076D8B272928E6420077E81F /* CodableBundleExtension.swift in Sources */,
 				070E699B292FDA3A0013CB68 /* VideoListItemView.swift in Sources */,
 				07859B54292A3B4600D91420 /* InsetGalleryView.swift in Sources */,
