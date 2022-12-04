@@ -47,6 +47,7 @@
 		07859B52292A3A3A00D91420 /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859B51292A3A3A00D91420 /* HeadingView.swift */; };
 		07859B54292A3B4600D91420 /* InsetGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859B53292A3B4600D91420 /* InsetGalleryView.swift */; };
 		07859B56292A480000D91420 /* InsetFactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859B55292A480000D91420 /* InsetFactView.swift */; };
+		0799DAE6293CD56E00CADBDD /* AnimalGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799DAE5293CD56E00CADBDD /* AnimalGridItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		07859B51292A3A3A00D91420 /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		07859B53292A3B4600D91420 /* InsetGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetGalleryView.swift; sourceTree = "<group>"; };
 		07859B55292A480000D91420 /* InsetFactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetFactView.swift; sourceTree = "<group>"; };
+		0799DAE5293CD56E00CADBDD /* AnimalGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalGridItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				076D8B202928E29C0077E81F /* CoverImageView.swift */,
 				074CA538293B6FEF0036571E /* MapAnnotationView.swift */,
+				0799DAE5293CD56E00CADBDD /* AnimalGridItemView.swift */,
 				074D434C292A51D900167582 /* ExternalWeblinkView.swift */,
 				070432AD293506D600034FC6 /* VideoPlayerView.swift */,
 				07859B4B292A2D6C00D91420 /* AnimalListItemView.swift */,
@@ -335,6 +338,7 @@
 				070E6999292FD9E70013CB68 /* VideoModel.swift in Sources */,
 				076D8B1C2928C7FE0077E81F /* GalleryView.swift in Sources */,
 				070432CA29350FD600034FC6 /* LocationModel.swift in Sources */,
+				0799DAE6293CD56E00CADBDD /* AnimalGridItemView.swift in Sources */,
 				076D8B272928E6420077E81F /* CodableBundleExtension.swift in Sources */,
 				070E699B292FDA3A0013CB68 /* VideoListItemView.swift in Sources */,
 				07859B54292A3B4600D91420 /* InsetGalleryView.swift in Sources */,
