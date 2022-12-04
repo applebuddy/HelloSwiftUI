@@ -64,7 +64,7 @@ struct MotionAnimationView: View {
             })
         } //: Loop
 
-        Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
+        // Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
       } //: ZStack
     } //: Geometry
   }
