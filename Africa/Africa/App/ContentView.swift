@@ -54,6 +54,8 @@ struct ContentView: View {
 								AnimalListItemView(animal: animal)
 							} //: Link
 						} //: Loop
+						CreditsView()
+							.modifier(CenterModifier()) // how to use viewModifier
 					} //: List
 				} else {
 					// MARK: - GridView
