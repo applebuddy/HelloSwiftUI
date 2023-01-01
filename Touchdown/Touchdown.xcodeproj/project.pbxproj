@@ -21,6 +21,10 @@
 		0759832C2961B41E006D0F7F /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759832B2961B41E006D0F7F /* BrandModel.swift */; };
 		0759832E2961B463006D0F7F /* BrandItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759832D2961B462006D0F7F /* BrandItemView.swift */; };
 		075983302961B4E2006D0F7F /* BrandGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759832F2961B4E2006D0F7F /* BrandGridView.swift */; };
+		075983322961BB3A006D0F7F /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075983312961BB3A006D0F7F /* ProductDetailView.swift */; };
+		075983342961BBF9006D0F7F /* NavigationBarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075983332961BBF9006D0F7F /* NavigationBarDetailView.swift */; };
+		075983362961BCB4006D0F7F /* HeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075983352961BCB4006D0F7F /* HeaderDetailView.swift */; };
+		075983382961BD47006D0F7F /* TopPartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075983372961BD47006D0F7F /* TopPartDetailView.swift */; };
 		0772AE5C295874A2007C66B5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772AE5B295874A2007C66B5 /* NavigationBarView.swift */; };
 		0772AE5E295875D1007C66B5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772AE5D295875D1007C66B5 /* LogoView.swift */; };
 		07F8880829586C4F00D02501 /* TouchdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8880729586C4F00D02501 /* TouchdownApp.swift */; };
@@ -50,6 +54,10 @@
 		0759832B2961B41E006D0F7F /* BrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
 		0759832D2961B462006D0F7F /* BrandItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandItemView.swift; sourceTree = "<group>"; };
 		0759832F2961B4E2006D0F7F /* BrandGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandGridView.swift; sourceTree = "<group>"; };
+		075983312961BB3A006D0F7F /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		075983332961BBF9006D0F7F /* NavigationBarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDetailView.swift; sourceTree = "<group>"; };
+		075983352961BCB4006D0F7F /* HeaderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailView.swift; sourceTree = "<group>"; };
+		075983372961BD47006D0F7F /* TopPartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPartDetailView.swift; sourceTree = "<group>"; };
 		0772AE5B295874A2007C66B5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		0772AE5D295875D1007C66B5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		07F8880429586C4F00D02501 /* Touchdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touchdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +157,10 @@
 		07F8882129586EC900D02501 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				075983312961BB3A006D0F7F /* ProductDetailView.swift */,
+				075983372961BD47006D0F7F /* TopPartDetailView.swift */,
+				075983352961BCB4006D0F7F /* HeaderDetailView.swift */,
+				075983332961BBF9006D0F7F /* NavigationBarDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -274,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07056D58295E049400663DC6 /* CodableBundleExtension.swift in Sources */,
+				075983362961BCB4006D0F7F /* HeaderDetailView.swift in Sources */,
+				075983382961BD47006D0F7F /* TopPartDetailView.swift in Sources */,
 				07F8880A29586C4F00D02501 /* ContentView.swift in Sources */,
 				0772AE5E295875D1007C66B5 /* LogoView.swift in Sources */,
 				07F8882929586F9900D02501 /* FooterView.swift in Sources */,
@@ -281,6 +295,8 @@
 				0759832A2961A66F006D0F7F /* ProductItemView.swift in Sources */,
 				075983302961B4E2006D0F7F /* BrandGridView.swift in Sources */,
 				07F8880829586C4F00D02501 /* TouchdownApp.swift in Sources */,
+				075983322961BB3A006D0F7F /* ProductDetailView.swift in Sources */,
+				075983342961BBF9006D0F7F /* NavigationBarDetailView.swift in Sources */,
 				07F8882729586F0700D02501 /* Constant.swift in Sources */,
 				07056D62295F4D5000663DC6 /* CategoryGridView.swift in Sources */,
 				07056D5E295F4B6000663DC6 /* CategoryModel.swift in Sources */,
